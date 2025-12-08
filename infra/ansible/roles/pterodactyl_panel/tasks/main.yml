@@ -25,4 +25,3 @@
     name: redis-server
     state: present
     update_cache: yes
-

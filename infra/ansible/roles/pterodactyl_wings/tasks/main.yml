@@ -1,7 +1,8 @@
 # tasks/main.yml
 - name: Download Wings binary
   get_url:
-    url: "https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_amd64"
+    url: "https://github.com/pterodactyl/wings/releases/latest/download/"
+         "wings_linux_amd64"
     dest: /usr/local/bin/wings
     mode: '0755'
 
