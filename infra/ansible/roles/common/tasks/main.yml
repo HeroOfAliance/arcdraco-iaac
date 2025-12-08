@@ -25,4 +25,3 @@
   ufw:
     state: enabled
     policy: allow
-

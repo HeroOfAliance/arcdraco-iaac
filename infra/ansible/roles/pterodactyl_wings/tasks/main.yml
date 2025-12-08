@@ -10,6 +10,3 @@
     path: /etc/pterodactyl
     state: directory
     mode: '0755'
-
-# ...далее: шаблон config.yml, systemd unit...
-

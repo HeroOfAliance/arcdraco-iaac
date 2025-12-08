@@ -16,4 +16,3 @@
   command: docker info
   register: docker_info
   changed_when: false
-

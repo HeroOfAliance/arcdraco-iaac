@@ -26,5 +26,3 @@
     state: present
     update_cache: yes
 
-# ...далее: создание БД, скачивание панели, настройка .env, миграции, systemd, cron...
-

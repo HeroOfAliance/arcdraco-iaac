@@ -7,4 +7,3 @@
     - role: pterodactyl_wings
     - role: nginx
     - role: ssl
-

@@ -28,4 +28,3 @@ firewall_allowed_ports:
   - 25565
   - 25566
   - 25567
-

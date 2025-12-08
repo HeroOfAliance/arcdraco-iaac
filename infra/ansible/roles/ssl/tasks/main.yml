@@ -6,6 +6,3 @@
       - python3-certbot-nginx
     state: present
     update_cache: yes
-
-# ...далее: получение сертификата, renew cron...
-
