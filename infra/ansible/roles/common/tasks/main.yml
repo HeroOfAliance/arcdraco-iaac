@@ -1,0 +1,28 @@
+# tasks/main.yml
+- name: Ensure base packages are installed
+  apt:
+    name:
+      - curl
+      - git
+      - unzip
+      - tar
+      - htop
+      - ufw
+    state: present
+    update_cache: yes
+
+- name: Set timezone
+  timezone:
+    name: Etc/UTC
+
+- name: Enable UFW and allow required ports
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+  loop: "{{ firewall_allowed_ports }}"
+
+- name: Enable UFW
+  ufw:
+    state: enabled
+    policy: allow
+

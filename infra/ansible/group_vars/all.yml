@@ -1,0 +1,31 @@
+panel_domain: "panel.arcdraco.com"
+project_domain: "arcdraco.com"
+
+panel_install_dir: "/var/www/pterodactyl"
+
+db_name: "panel"
+db_user: "paneluser"
+db_password: "CHANGE_ME_SECURE"
+
+php_version: "8.1"
+
+pterodactyl_panel_version: "latest"
+pterodactyl_wings_version: "latest"
+
+node_name: "arcdraco-main-node"
+node_public_fqdn: "arcdraco.com"
+node_memory_mb: 8192
+node_disk_mb: 102400
+
+game_ports:
+  start: 25565
+  end: 25600
+
+firewall_allowed_ports:
+  - 22
+  - 80
+  - 443
+  - 25565
+  - 25566
+  - 25567
+

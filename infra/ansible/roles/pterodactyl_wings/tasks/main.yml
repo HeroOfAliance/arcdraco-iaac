@@ -1,0 +1,15 @@
+# tasks/main.yml
+- name: Download Wings binary
+  get_url:
+    url: "https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_amd64"
+    dest: /usr/local/bin/wings
+    mode: '0755'
+
+- name: Create config directory
+  file:
+    path: /etc/pterodactyl
+    state: directory
+    mode: '0755'
+
+# ...далее: шаблон config.yml, systemd unit...
+

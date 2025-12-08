@@ -1,0 +1,17 @@
+name: Check
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install yamllint & ansible-lint
+        run: sudo apt-get update && sudo apt-get install -y yamllint ansible-lint
+      - name: yamllint
+        run: yamllint infra/ansible/
+      - name: ansible-lint
+        run: ansible-lint infra/ansible/
+

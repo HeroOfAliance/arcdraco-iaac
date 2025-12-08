@@ -1,0 +1,30 @@
+# tasks/main.yml
+- name: Install PHP and extensions
+  apt:
+    name:
+      - "php{{ php_version }}"
+      - "php{{ php_version }}-fpm"
+      - "php{{ php_version }}-cli"
+      - "php{{ php_version }}-mbstring"
+      - "php{{ php_version }}-mysql"
+      - "php{{ php_version }}-redis"
+      - "php{{ php_version }}-xml"
+      - "php{{ php_version }}-curl"
+      - composer
+    state: present
+    update_cache: yes
+
+- name: Install MariaDB
+  apt:
+    name: mariadb-server
+    state: present
+    update_cache: yes
+
+- name: Install Redis
+  apt:
+    name: redis-server
+    state: present
+    update_cache: yes
+
+# ...далее: создание БД, скачивание панели, настройка .env, миграции, systemd, cron...
+

@@ -1,0 +1,24 @@
+# tasks/main.yml
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Deploy static site (index.html)
+  copy:
+    src: ../../../../site/index.html
+    dest: /var/www/html/index.html
+    owner: www-data
+    group: www-data
+    mode: '0644'
+
+- name: Ensure /var/www/html has correct permissions
+  file:
+    path: /var/www/html
+    owner: www-data
+    group: www-data
+    mode: '0755'
+    state: directory
+
+# ...далее: шаблон конфига, sites-enabled, nginx -t, reload...
