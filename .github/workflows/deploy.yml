@@ -26,9 +26,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           script: |
-            cd /root/arcdraco-iaac
+            cd /root/arcdraco-iaac/infra/ansible
             apt-get update && apt-get install -y ansible
-            ansible-playbook infra/ansible/playbooks/site.yml -i infra/ansible/inventories/production/hosts.ini
+            ansible-playbook playbooks/site.yml -i inventories/production/hosts.ini
 
 # ВАЖНО: используйте актуальный IP и пользователя root для подключения
 # [panel]
