@@ -36,7 +36,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           source: infra/ansible/ansible.cfg
-          target: /root/arcdraco-iaac/infra/ansible/ansible.cfg
+          target: /root/arcdraco-iaac/infra/ansible/
           overwrite: true
       - name: Run ansible-playbook on server
         uses: appleboy/ssh-action@v1.0.3
