@@ -22,9 +22,9 @@ game_ports:
   end: 25600
 
 firewall_allowed_ports:
-  - 22
-  - 80
-  - 443
+  - 22  # SSH
+  - 80  # HTTP
+  - 443 # HTTPS
   - 25565
   - 25566
   - 25567

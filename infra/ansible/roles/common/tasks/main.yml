@@ -25,3 +25,13 @@
   ufw:
     state: enabled
     policy: allow
+
+- name: Debug firewall_allowed_ports
+  debug:
+    var: firewall_allowed_ports
+
+- name: Allow required ports through UFW
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+  loop: "{{ firewall_allowed_ports }}"
