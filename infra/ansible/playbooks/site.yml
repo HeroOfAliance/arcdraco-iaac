@@ -1,9 +1,9 @@
 - hosts: all
   become: true
   pre_tasks:
-    - name: Debug firewall_allowed_ports
+    - name: Debug all variables
       debug:
-        var: firewall_allowed_ports
+        msg: "{{ hostvars[inventory_hostname] }}"
   roles:
     - role: common
     - role: docker
