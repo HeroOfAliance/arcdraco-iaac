@@ -18,6 +18,26 @@ jobs:
           source: .
           target: /root/arcdraco-iaac
           overwrite: true
+      - name: Copy project files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
+          source: infra/ansible/roles
+          target: /root/arcdraco-iaac/infra/ansible/roles
+          overwrite: true
+      - name: Copy ansible.cfg to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
+          source: infra/ansible/ansible.cfg
+          target: /root/arcdraco-iaac/infra/ansible/ansible.cfg
+          overwrite: true
       - name: Run ansible-playbook on server
         uses: appleboy/ssh-action@v1.0.3
         with:
