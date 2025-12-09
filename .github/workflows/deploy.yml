@@ -27,7 +27,7 @@ jobs:
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           script: |
             cd /root/arcdraco-iaac/infra/ansible
-            ansible-playbook playbooks/site.yml -i inventories/production/hosts.ini
+            ansible-playbook playbooks/site.yml -i /root/arcdraco-iaac/infra/ansible/inventories/production/hosts.ini
 
 # ВАЖНО: используйте актуальный IP и пользователя root для подключения
 # [panel]
