@@ -1,5 +1,9 @@
 - hosts: all
   become: true
+  pre_tasks:
+    - name: Debug firewall_allowed_ports
+      debug:
+        var: firewall_allowed_ports
   roles:
     - role: common
     - role: docker
